@@ -5,21 +5,9 @@ var ExampleSite = {
   // All pages
   common: {
     init: function() {
-      // JS here
+      $("html").addClass("active");
     },
     finalize: function() { }
-  },
-  // Home page
-  home: {
-    init: function() {
-      // JS here
-    }
-  },
-  // About page
-  about: {
-    init: function() {
-      // JS here
-    }
   }
 };
 
@@ -44,3 +32,13 @@ var UTIL = {
 };
 
 $(document).ready(UTIL.loadEvents);
+
+
+$(window).load(function () {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    useCSS: true,
+    slideshow: true
+  });
+});
+
