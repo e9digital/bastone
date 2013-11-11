@@ -84,6 +84,7 @@ function e9_interiors_nopagination ($query) {
 add_action('parse_query', 'e9_interiors_nopagination');
 
 
+
 function bastone_register ( $wp_customize ) {
   $wp_customize->add_section(
     'bastone_theme',
@@ -118,3 +119,11 @@ function bastone_register ( $wp_customize ) {
 
 // Setup the Theme Customizer settings and controls...
 add_action('customize_register', 'bastone_register');
+
+
+/**
+ * Helper to extract just the src from <img> html
+ */
+function get_img_src ($img) {
+  return (preg_match('~\bsrc="([^"]++)"~', $img, $matches)) ? $matches[1] : '';
+}

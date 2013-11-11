@@ -9,7 +9,24 @@
 
 <?php $the_query = new WP_Query($args); if ( $the_query->have_posts() ) : ?>
   <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-    <h2><?php the_title(); ?></h2>
+    <?php
+    if (has_post_thumbnail()) {
+      $url = get_img_src(get_the_post_thumbnail(NULL, 'medium'));
+    } 
+    elseif ($images = get_field('bg_images')) {
+      $url = $images[0]['sizes']['medium'];
+    }
+
+    if ($url): ?>
+      <div class="interior-card">
+        <a href="<?php the_permalink() ?>">
+          <img class="interior-image" src="<?php echo $url ?>">
+          <span class="interior-content">
+            <?php the_content() ?>
+          </span>
+        </a>
+      </div>
+    <?php endif; ?>
   <?php endwhile; ?>
 <?php endif; ?>
 
