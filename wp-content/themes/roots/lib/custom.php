@@ -49,8 +49,7 @@ function e9_interiors_create () {
 		'menu_position' => 25,
 		'supports'      => array('title', 'editor', 'thumbnail'),
     'has_archive'   => false,
-    'public'        => false,
-    'rewrite'       => array('slug' => 'xxx'),
+    'rewrite'       => array('slug' => 'interiors'),
 	);
 	register_post_type('e9_interior', $args);	
 }
@@ -83,3 +82,39 @@ function e9_interiors_nopagination ($query) {
   }
 }
 add_action('parse_query', 'e9_interiors_nopagination');
+
+
+function bastone_register ( $wp_customize ) {
+  $wp_customize->add_section(
+    'bastone_theme',
+    array(
+      'title'    => __( 'Theme Options', 'bastone' ),
+      'priority' => 120,
+    )
+  );
+
+  $wp_customize->add_setting('bastone_logo');
+  $wp_customize->add_control(new WP_Customize_Image_Control(
+     $wp_customize,
+     'bastone_logo',
+     array(
+        'label' => __('Logo', 'bastone'),
+        'section' => 'bastone_theme',
+        'settings' => 'bastone_logo'
+     ) 
+  ));
+
+  $wp_customize->add_setting('bastone_sidebar_bg');
+  $wp_customize->add_control(new WP_Customize_Image_Control(
+     $wp_customize,
+     'bastone_sidebar_bg',
+     array(
+        'label' => __('Sidebar Background', 'bastone'),
+        'section' => 'bastone_theme',
+        'settings' => 'bastone_sidebar_bg'
+     ) 
+  ));
+}
+
+// Setup the Theme Customizer settings and controls...
+add_action('customize_register', 'bastone_register');

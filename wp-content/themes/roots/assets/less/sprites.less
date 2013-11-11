@@ -1,0 +1,48 @@
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+  background-position: @x @y;
+  width: @width;
+  height: @height;
+}
+
+.sprite {
+  background: url(/assets/img/sprites.png) no-repeat;
+  display: block;
+  text-indent: -10000px;
+  font-size: 0.1px;
+}
+
+.sprite-arrow_next_active {
+  .stitches-sprite(-5px, -5px, 60px, 60px);
+}
+
+.sprite-arrow_next_hover {
+  .stitches-sprite(-75px, -5px, 60px, 60px);
+}
+
+.sprite-arrow_prev_active {
+  .stitches-sprite(-145px, -5px, 60px, 60px);
+}
+
+.sprite-arrow_prev_hover {
+  .stitches-sprite(-215px, -5px, 60px, 60px);
+}
+
+.sprite-icon_plus_active {
+  .stitches-sprite(-285px, -5px, 31px, 31px);
+}
+
+.sprite-icon_plus_hover {
+  .stitches-sprite(-326px, -5px, 31px, 31px);
+}
+
+.sprite-icon_x_active {
+  .stitches-sprite(-285px, -46px, 31px, 31px);
+}
+
+.sprite-icon_x_hover {
+  .stitches-sprite(-326px, -46px, 31px, 31px);
+}
+
+.sprite-interior-hover {
+  .stitches-sprite(-5px, -87px, 388px, 276px);
+}

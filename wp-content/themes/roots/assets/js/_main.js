@@ -35,10 +35,19 @@ $(document).ready(UTIL.loadEvents);
 
 
 $(window).load(function () {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    useCSS: true,
-    slideshow: true
+
+
+  $('.flexslider').each(function () {
+    var $slider = $(this);
+
+    $slider.flexslider({
+      animation: "slide",
+      useCSS: true,
+      slideshow: true,
+      controlNav: "1" === $slider.data("pager"),
+      slideshowSpeed: Number($slider.data("speed")),
+      pauseOnHover: true
+    });
   });
 });
 
