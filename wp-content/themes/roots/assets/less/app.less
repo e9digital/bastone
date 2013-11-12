@@ -370,6 +370,11 @@ body.show-main {
   float: left;
   margin: 0 10px 10px 0;
 
+  @bw: 1px;
+  @sw: 386px;
+  @sh: 275px;
+
+
   &.last {
     margin-right: 0;
   }
@@ -378,8 +383,8 @@ body.show-main {
     display: block;
     position: relative;
     // image dimensions + border
-    width: 386px + 4px;
-    height: 275px + 4px;
+    width: @sw + 2*@bw;
+    height: @sh + 2*@bw;
   }
 
   .interior-content {
@@ -396,7 +401,7 @@ body.show-main {
   }
 
   img {
-    border: 2px solid #fff;
+    border: @bw solid #fff;
   }
 
   img, .interior-content {
