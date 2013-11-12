@@ -46,3 +46,17 @@
 .sprite-interior-hover {
   .stitches-sprite(-5px, -87px, 388px, 276px);
 }
+
+.sprite-expand, .sprite-collapse {
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
+}
+
+.sprite-collapse {
+  .sprite-icon_x_active;
+  &:hover {
+    .sprite-icon_x_hover;
+  }
+}
+

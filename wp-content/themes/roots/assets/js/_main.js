@@ -8,6 +8,18 @@ var ExampleSite = {
       $("html").addClass("active");
     },
     finalize: function() { }
+  },
+
+  single_e9_interior: {
+    init: function () {
+      $(".sprite-expand").click(function () {
+        $("body").addClass("show-main");
+      });
+
+      $(".sprite-collapse").click(function () {
+        $("body").removeClass("show-main");
+      });
+    }
   }
 };
 
@@ -35,8 +47,6 @@ $(document).ready(UTIL.loadEvents);
 
 
 $(window).load(function () {
-
-
   $('.flexslider').each(function () {
     var $slider = $(this);
 
@@ -46,7 +56,7 @@ $(window).load(function () {
       slideshow: true,
       controlNav: "1" === $slider.data("pager"),
       slideshowSpeed: Number($slider.data("speed")),
-      pauseOnHover: true
+      pauseOnHover: false
     });
   });
 });

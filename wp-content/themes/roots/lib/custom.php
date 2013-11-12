@@ -50,6 +50,7 @@ function e9_interiors_create () {
 		'supports'      => array('title', 'editor', 'thumbnail'),
     'has_archive'   => false,
     'rewrite'       => array('slug' => 'interiors'),
+    'hierarchical'  => true,
 	);
 	register_post_type('e9_interior', $args);	
 }
@@ -115,10 +116,34 @@ function bastone_register ( $wp_customize ) {
         'settings' => 'bastone_sidebar_bg'
      ) 
   ));
+
+  $wp_customize->add_setting('bastone_interior_hover_bg');
+  $wp_customize->add_control(new WP_Customize_Image_Control(
+     $wp_customize,
+     'bastone_interior_hover_bg',
+     array(
+        'label' => __('Interiors Hover Background', 'bastone'),
+        'section' => 'bastone_theme',
+        'settings' => 'bastone_interior_hover_bg'
+     ) 
+  ));
 }
 
 // Setup the Theme Customizer settings and controls...
 add_action('customize_register', 'bastone_register');
+
+function bastone_customize_css () {
+  $bg = get_theme_mod("bastone_interior_hover_bg");
+  if (!$bg) {
+    $bg = get_template_directory_uri()."/assets/img/interior-hover.png";
+  }
+  ?>
+    <style type="text/css">
+      .interior-card .interior-content { background-image: url(<?php echo $bg ?>); }
+    </style>
+  <?php
+}
+add_action( 'wp_head', 'bastone_customize_css');
 
 
 /**

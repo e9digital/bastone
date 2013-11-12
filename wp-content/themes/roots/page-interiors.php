@@ -7,6 +7,8 @@
   );
 ?>
 
+<h2>Interiors</h2>
+
 <?php $the_query = new WP_Query($args); if ( $the_query->have_posts() ) : ?>
   <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     <?php
@@ -22,7 +24,7 @@
         <a href="<?php the_permalink() ?>">
           <img class="interior-image" src="<?php echo $url ?>">
           <span class="interior-content">
-            <?php the_content() ?>
+            <?php the_title() ?>
           </span>
         </a>
       </div>
