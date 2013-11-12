@@ -2,6 +2,7 @@
 // Only fires on body class (working off strictly WordPress body_class)
 
 var ExampleSite = {
+
   // All pages
   common: {
     init: function() {
@@ -59,5 +60,8 @@ $(window).load(function () {
       pauseOnHover: false
     });
   });
-});
 
+  if (Modernizr.backgroundsize) {
+    // handle resizing slide images in IE
+  }
+});

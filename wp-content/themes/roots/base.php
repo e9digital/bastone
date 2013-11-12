@@ -29,12 +29,13 @@
     <?php $images = get_field('bg_images'); if ($images): ?>
       <?php $pager = $is_interior || is_front_page(); ?>
       <div class="bg-images">
-        <div class="bg-images-left"></div>
-        <div class="bg-images-right">
+        <div class="bg-images-inner">
           <div <?php echo count($images > 1) ? 'class="flexslider"' : '' ?> data-speed="<?php the_field('bg_images_duration') ?>" data-pager="<?php echo $pager ? "1" : "0" ?>">
             <ul class="slides">
               <?php foreach( $images as $image ): ?>
-                <li class="slide" style="background-image: url(<?php echo $image['url']; ?>);"></li> 
+                <li class="slide" style="background-image: url(<?php echo $image['url']; ?>);">
+                  <img class="slide-image" src="<?php echo $image['url']; ?>">
+                </li> 
               <?php endforeach; ?>
             </ul>
           </div>
@@ -42,5 +43,6 @@
       </div>
     <?php endif; ?>
   </div>
+  <?php wp_footer(); ?>
 </body>
 </html>
