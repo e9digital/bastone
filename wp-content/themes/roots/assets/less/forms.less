@@ -1,0 +1,117 @@
+.gform_wrapper ul {
+  padding: 0;
+  margin: 0;
+  list-style: none none;
+}
+.gform_wrapper li {
+  .form-group();
+}
+.gform_wrapper form {
+  margin-bottom: 0;
+}
+.gform_wrapper .gfield_label {
+  font-weight: normal;
+  margin-bottom: 0;
+  color: #333;
+}
+.gform_wrapper .gfield_required {
+  padding-left: 1px;
+  color: @state-danger-text;
+}
+
+label {
+  display: block;
+}
+
+.gfield {
+  .clearfix();
+
+  .ginput_container, .validation_message {
+    width: 50%;
+    float: left;
+  }
+
+  .validation_message {
+    padding-left: 10px;
+  }
+
+  &.nolabel {
+    padding: 5px;
+    margin-top: 10px;
+    label {
+      display: none;
+    }
+  }
+}
+
+.gfield.nolabel.gfield_error {
+
+}
+
+// not sure why this is showing up, seems a bug
+.gfield_error .ginput_preview {
+  display: none;
+}
+
+.validation_message {
+  color: @state-danger-text;
+}
+
+.gfield_description {
+  display: block; // account for any element using help-block
+  margin-top: 5px;
+}
+
+.ginput_container {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    .form-control();
+  }
+}
+
+.validation_error {
+  display: none;
+}
+
+.ginput_container textarea {
+  height: 110px;
+}
+.gform_button {
+  .btn();
+  .btn-default();
+}
+
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    color: @state-danger-text;
+  }
+  input,
+  select,
+  textarea {
+    border-color: @alert-danger-border;
+    background-color: @alert-danger-bg;
+    color: @alert-danger-text;
+    .form-control-focus(@alert-danger-text);
+  }
+}
+.validation_error {
+  .alert();
+  .alert-danger();
+}
+#gforms_confirmation_message {
+  .alert();
+}
