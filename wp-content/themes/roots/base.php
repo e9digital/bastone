@@ -30,7 +30,10 @@
       <?php $pager = $is_interior || is_front_page(); ?>
       <div class="bg-images">
         <div class="bg-images-inner">
-          <div <?php echo count($images > 1) ? 'class="flexslider"' : '' ?> data-speed="<?php the_field('bg_images_duration') ?>" data-pager="<?php echo $pager ? "1" : "0" ?>">
+          <div <?php echo count($images > 1) ? 'class="flexslider"' : '' ?> 
+            data-speed="<?php the_field('bg_images_duration') ?>"
+            data-transition="<?php the_field('bg_images_transition') ?>"
+            data-pager="<?php echo $pager ? "1" : "0" ?>">
             <ul class="slides">
               <?php foreach( $images as $image ): ?>
                 <li class="slide" style="background-image: url(<?php echo $image['url']; ?>);">

@@ -52,7 +52,7 @@ $(window).load(function () {
     var $slider = $(this);
 
     $slider.flexslider({
-      animation: "slide",
+      animation: $slider.data("transition") || 'slide',
       useCSS: true,
       slideshow: true,
       controlNav: "1" === $slider.data("pager"),
