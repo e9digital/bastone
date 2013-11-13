@@ -12,7 +12,7 @@
   );
 ?>
 
-<h2>Interiors</h2>
+<h1 class="page-title"><i class="gfx"></i><?php the_title(); ?></h1>
 
 <?php $i = 0; $the_query = new WP_Query($args); if ( $the_query->have_posts() ) : ?>
   <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
