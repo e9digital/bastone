@@ -1,0 +1,1 @@
+[11-Sep-2013 18:45:00 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/bnc/code/wptouch-pro-3/release/themes/foundation/default/index.php on line 1
