@@ -23,7 +23,7 @@
 
 html { 
   overflow-y: scroll;
-  background-color: #1a1a1a;
+  background-color: #637077;
 
   * {
     .box-sizing(border-box);
@@ -75,9 +75,9 @@ header.banner {
 @main-width: 910px;
 @t-sidebar-duration: 0.5s;
 @t-main-duration: 0.8s;
-@t-main-delay: 0.4s;
-@t-bg-duration: 1s;
-@t-bg-delay: @t-sidebar-duration + 0.2s;
+@t-bg-duration: 0.8s;
+@t-bg-delay: @t-sidebar-duration;
+@t-main-delay: @t-bg-delay + 0.5s;
 
 .mainWrapper {
   min-width: @main-width;
@@ -100,7 +100,7 @@ header.banner {
 
   // position: absolute;
   padding-left: @sidebar-width;
-  @left: -@main-width - @sidebar-width;
+  @left: -@main-width;
   .translate(@left; 0);
   html.no-csstransforms & {
     left: @left;
