@@ -92,10 +92,6 @@ header.banner {
 @t-bg-delay: @t-sidebar-duration;
 @t-main-delay: @t-bg-delay + 0.5s;
 
-.mainWrapper {
-  min-width: @main-width;
-}
-
 .main { 
   z-index: 100;
   .box-sizing(content-box);
@@ -362,6 +358,7 @@ body.show-main {
 @import (less) "vendor/flexslider.css";
 
 .bg-images {
+  z-index: 1;
   width: 100%;
   height: 100%;
   position: fixed;

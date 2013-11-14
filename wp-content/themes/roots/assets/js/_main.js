@@ -47,21 +47,19 @@ var UTIL = {
 $(document).ready(UTIL.loadEvents);
 
 
-$(window).load(function () {
-  $('.flexslider').each(function () {
-    var $slider = $(this);
+$(function () {
+  var $slider = $(".flexslider");
 
-    $slider.flexslider({
-      animation: $slider.data("transition") || 'slide',
-      useCSS: true,
-      slideshow: true,
-      controlNav: "1" === $slider.data("pager"),
-      slideshowSpeed: Number($slider.data("speed")),
-      pauseOnHover: false
-    });
+  $slider.flexslider({
+    animation: $slider.data("transition") || 'slide',
+    useCSS: true,
+    slideshow: true,
+    controlNav: "1" === $slider.data("pager"),
+    slideshowSpeed: Number($slider.data("speed")),
+    pauseOnHover: false
   });
 
-  if (Modernizr.backgroundsize) {
+  // if (Modernizr.backgroundsize) {
     // handle resizing slide images in IE
-  }
+  // }
 });

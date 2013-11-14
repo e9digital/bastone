@@ -16,16 +16,6 @@
       <?php include roots_sidebar_path(); ?>
       <?php get_template_part('templates/footer'); ?>
     </div>
-    <div class="mainWrapper">
-      <?php if (!is_front_page()): ?>
-        <div class="main">
-          <div class="main-inner">
-            <?php if ($is_interior): ?><span class="sprite sprite-collapse" title="Hide Details">Hide Details</span><?php endif; ?>
-            <?php include roots_template_path(); ?>
-          </div>
-        </div>
-      <?php endif; ?>
-    </div>
     <?php $images = get_field('bg_images'); if ($images): ?>
       <?php $pager = $is_interior || is_front_page(); ?>
       <div class="bg-images">
@@ -42,6 +32,14 @@
               <?php endforeach; ?>
             </ul>
           </div>
+        </div>
+      </div>
+    <?php endif; ?>
+    <?php if (!is_front_page()): ?>
+      <div class="main">
+        <div class="main-inner">
+          <?php if ($is_interior): ?><span class="sprite sprite-collapse" title="Hide Details">Hide Details</span><?php endif; ?>
+          <?php include roots_template_path(); ?>
         </div>
       </div>
     <?php endif; ?>
